@@ -19,6 +19,7 @@ public class LoginTestFactory {
 	WebDriver dr;
 	LoginBankPageFactory loginView;
 	HomePageFactory homeView;
+	//commments
 	
 	@BeforeTest
 	public void openBrowser() {
