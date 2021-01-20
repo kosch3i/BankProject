@@ -6,31 +6,40 @@ package bank.tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.testng.annotations.*;
 
-import bank.pages.HomePage;
-import bank.pages.LoginBankPage;
+import bank.pages.HomePageFactory;
+import bank.pages.LoginBankPageFactory;
+import static bank.tests.Utils.*;
 
-public class LoginTest {
+@SuppressWarnings("deprecation")
+public class LoginPageFactory {
 	WebDriver dr;
-	String driverPath = "C:\\Selenium\\Drivers\\firefox.exe";
-	String userId = "mngr304620";
-	String password = "EmUryjA";
-	LoginBankPage loginView;
-	HomePage homeView;
+	LoginBankPageFactory loginView;
+	HomePageFactory homeView;
 	
 	@BeforeTest
 	public void openBrowser() {
-		System.setProperty("webdriver.gecko.driver", driverPath);
-		dr = new FirefoxDriver();
-		loginView = new LoginBankPage(dr);
+		System.setProperty("webdriver.gecko.driver", DRIVERPATH);
+		
+		ProfilesIni profile = new ProfilesIni();
+		//FirefoxProfile myProfile = new FirefoxProfile(new File("C:\\Users\\ITStark\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\102bpfx8.testing"));
+		FirefoxProfile myProfile =  profile.getProfile("testing");
+		FirefoxOptions options = new FirefoxOptions();
+		options.setProfile(myProfile);
+		
+		dr = new FirefoxDriver(options);
+		loginView = new LoginBankPageFactory(dr);
 		loginView.init();
 		
 	}
 	
 	@Test(priority=0)
 	public void login() {
-		loginView.login(userId, password);
+		loginView.login(USERID, PASSWORD);
 		
 		//Validate the login was successfully checking the title and a welcome message
 		String titlePage = dr.getTitle();
@@ -45,7 +54,7 @@ public class LoginTest {
 	
 	@Test(priority=1, dependsOnMethods = {"login"})
 	public void logout() {
-		homeView = new HomePage(dr);
+		homeView = new HomePageFactory(dr);
 		homeView.logout();
 		dr.switchTo().alert().accept();
 	}

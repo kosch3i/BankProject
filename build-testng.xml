@@ -3,7 +3,7 @@
 <suite name="Banksuite">
   <test name="Default test" verbose="2">
     <classes>
-      <class name="bank.tests.LoginTestFactory"/>
+      <class name="bank.tests.LoginPageFactory"/>
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Default suite -->

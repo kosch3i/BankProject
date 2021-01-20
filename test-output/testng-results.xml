@@ -2,28 +2,28 @@
 <testng-results total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-19T17:15:30Z" name="Default suite" finished-at="2021-01-19T17:15:44Z" duration-ms="13844">
+  <suite started-at="2021-01-20T17:57:30Z" name="Banksuite" finished-at="2021-01-20T17:57:47Z" duration-ms="17836">
     <groups>
     </groups>
-    <test started-at="2021-01-19T17:15:30Z" name="Default test" finished-at="2021-01-19T17:15:44Z" duration-ms="13844">
-      <class name="bank.tests.LoginTestFactory">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:bank.tests.LoginTestFactory@659499f1]" started-at="2021-01-19T11:15:30Z" name="openBrowser" finished-at="2021-01-19T11:15:40Z" duration-ms="9263" status="PASS">
+    <test started-at="2021-01-20T17:57:30Z" name="Default test" finished-at="2021-01-20T17:57:47Z" duration-ms="17836">
+      <class name="bank.tests.LoginPageFactory">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:bank.tests.LoginPageFactory@659499f1]" started-at="2021-01-20T11:57:30Z" name="openBrowser" finished-at="2021-01-20T11:57:43Z" duration-ms="13579" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="login()[pri:0, instance:bank.tests.LoginTestFactory@659499f1]" started-at="2021-01-19T11:15:40Z" name="login" finished-at="2021-01-19T11:15:42Z" duration-ms="2393" status="PASS">
+        <test-method signature="login()[pri:0, instance:bank.tests.LoginPageFactory@659499f1]" started-at="2021-01-20T11:57:43Z" name="login" finished-at="2021-01-20T11:57:45Z" duration-ms="2050" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="logout()[pri:0, instance:bank.tests.LoginTestFactory@659499f1]" started-at="2021-01-19T11:15:42Z" name="logout" finished-at="2021-01-19T11:15:43Z" depends-on-methods="bank.tests.LoginTestFactory.login" duration-ms="989" status="PASS">
+        <test-method signature="logout()[pri:0, instance:bank.tests.LoginPageFactory@659499f1]" started-at="2021-01-20T11:57:45Z" name="logout" finished-at="2021-01-20T11:57:46Z" depends-on-methods="bank.tests.LoginPageFactory.login" duration-ms="1003" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:bank.tests.LoginTestFactory@659499f1]" started-at="2021-01-19T11:15:43Z" name="closeBrowser" finished-at="2021-01-19T11:15:44Z" duration-ms="1173" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:bank.tests.LoginPageFactory@659499f1]" started-at="2021-01-20T11:57:46Z" name="closeBrowser" finished-at="2021-01-20T11:57:47Z" duration-ms="1176" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- bank.tests.LoginTestFactory -->
+      </class> <!-- bank.tests.LoginPageFactory -->
     </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+  </suite> <!-- Banksuite -->
 </testng-results>

@@ -1,0 +1,7 @@
+bank\tests\Utils.class
+bank\pages\HomePage.class
+bank\pages\HomePageFactory.class
+bank\tests\Login.class
+bank\tests\LoginPageFactory.class
+bank\pages\LoginBankPage.class
+bank\pages\LoginBankPageFactory.class

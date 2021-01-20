@@ -3,41 +3,34 @@ package bank.tests;
 //import java.util.concurrent.TimeUnit;
 //import org.openqa.selenium.WebElement;
 
-import java.io.File;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.testng.annotations.*;
 
-import bank.pages.HomePageFactory;
-import bank.pages.LoginBankPageFactory;
-import static bank.tests.Utils.*;
+import bank.pages.HomePage;
+import bank.pages.LoginBankPage;
 
-public class LoginTestFactory {
+public class Login {
 	WebDriver dr;
-	LoginBankPageFactory loginView;
-	HomePageFactory homeView;
-	//commments
+	String driverPath = "C:\\Selenium\\Drivers\\firefox.exe";
+	String userId = "mngr304620";
+	String password = "EmUryjA";
+	LoginBankPage loginView;
+	HomePage homeView;
 	
 	@BeforeTest
 	public void openBrowser() {
-		System.setProperty("webdriver.gecko.driver", DRIVERPATH);
-		
-		FirefoxProfile myProfile = new FirefoxProfile(new File("C:\\Users\\ITStark\\AppData\\Local\\Mozilla\\Firefox\\Profiles\\102bpfx8.testing"));
-		FirefoxOptions options = new FirefoxOptions();
-		options.setProfile(myProfile);
-		
-		dr = new FirefoxDriver(options);
-		loginView = new LoginBankPageFactory(dr);
+		System.setProperty("webdriver.gecko.driver", driverPath);
+		dr = new FirefoxDriver();
+		loginView = new LoginBankPage(dr);
 		loginView.init();
 		
 	}
 	
 	@Test(priority=0)
 	public void login() {
-		loginView.login(USERID, PASSWORD);
+		loginView.login(userId, password);
 		
 		//Validate the login was successfully checking the title and a welcome message
 		String titlePage = dr.getTitle();
@@ -52,7 +45,7 @@ public class LoginTestFactory {
 	
 	@Test(priority=1, dependsOnMethods = {"login"})
 	public void logout() {
-		homeView = new HomePageFactory(dr);
+		homeView = new HomePage(dr);
 		homeView.logout();
 		dr.switchTo().alert().accept();
 	}
