@@ -20,7 +20,7 @@ public class LoginPageFactory {
 	WebDriver dr;
 	LoginBankPageFactory loginView;
 	HomePageFactory homeView;
-	//comments here:
+	//comments here.
 	
 	@BeforeTest
 	public void openBrowser() {
